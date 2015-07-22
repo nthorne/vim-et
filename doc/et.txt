@@ -1,0 +1,59 @@
+*et.txt*	Eval Templating System
+		ET REFERENCE MANUAL~
+
+================================================================================
+
+CONTENTS                                                       *ETContents*
+
+    1. installation..............|ETinstallation|
+    2. invocation................|ETinvocation|
+    3. templates.................|ETtemplates|
+    4. license...................|ETlicense|
+
+================================================================================
+
+1. installation                                            *ETinstallation*
+
+Prefered way of installing this plugin (as with any other script) is by 
+installing it as a git submodule, and loading it with pathogen (for pathogen
+installation instructions, please refer to https://github.com/tpope/vim-pathogen
+or http://www.vim.org/scripts/script.php?script_id=2332). When you have
+pathogen installed, installing et is as simple as: >
+
+    git clone git://github.com/nthorne/vim-et.git bundle/et
+
+<
+
+================================================================================
+
+2. invocation                                                *ETinvocation*
+
+>
+    :ET <template>
+<
+
+Where <template> is the name of a template file found within g:etTemplatePath.
+g:etTemplatePath defaults to ~/.vim/templates. Argument tab completion is
+available.
+
+================================================================================
+
+3. templates                                                  *ETtemplates*
+
+The et template format is quite simple - anything written between {{ and }}
+will be passed straight to eval, substituting the markers for eval's output.
+
+Example: >
+
+    Date: {{strftime("%Y-%m-%d")}}
+<
+Will be substituted for eg. >
+
+    Date: 2015-07-22
+<
+================================================================================
+
+4. license                                                      *ETlicense*
+
+Copyright (C) 2015 Niklas Thörne. This plugin is distributed under the
+GNU General Public License version 3.
